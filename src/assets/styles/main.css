@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: white;
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(72, 109, 255, .22),
+            transparent 35%),
+
+        radial-gradient(circle at top right,
+            rgba(131, 76, 255, .16),
+            transparent 40%),
+
+        radial-gradient(circle at bottom,
+            rgba(54, 91, 255, .18),
+            transparent 45%),
+
+        linear-gradient(
+            180deg,
+            #050814 0%,
+            #091327 35%,
+            #111E3E 70%,
+            #1B2647 100%
+        );
+
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
