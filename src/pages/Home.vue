@@ -146,12 +146,16 @@ onMounted(() => {
 .container {
   max-width: 1440px;
   width: 100%;
+  min-width: 0;
   margin: 0 auto;
   padding: 0 80px;
+  box-sizing: border-box;
 }
 
 .hero__container {
   min-height: calc(100vh - 80px);
+  min-width: 0;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -161,6 +165,7 @@ onMounted(() => {
 .hero__content {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
 .hero__badge {
@@ -505,9 +510,6 @@ onMounted(() => {
 
 
 @media (max-width: 600px) {
-  .container {
-    padding: 0 20px;
-  }
 
   .hero__container {
     padding-top: 60px;
@@ -537,21 +539,24 @@ onMounted(() => {
     line-height: 1.6;
   }
 
-  .hero__actions {
-    flex-direction: column;
+ .hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 10px;
+}
 
-    gap: 10px;
-  }
+.btn {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
 
-  .btn {
-    width: 100%;
+  min-height: 48px;
+  padding: 0 18px;
 
-    min-height: 48px;
-
-    padding: 0 18px;
-
-    border-radius: 12px;
-  }
+  border-radius: 12px;
+}
 
   .hero__visual {
     width: 100%;
@@ -613,33 +618,6 @@ onMounted(() => {
 
   .floating-card--top span {
     font-size: 18px;
-  }
-}
-
-
-@media (max-width: 380px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero__visual {
-    height: 390px;
-  }
-
-  .product-card {
-    width: 245px;
-  }
-
-  .product-card__image {
-    height: 260px;
-  }
-
-  .floating-card--top {
-    right: -5px;
-  }
-
-  .floating-card--bottom {
-    left: -5px;
   }
 }
 
@@ -773,6 +751,86 @@ onMounted(() => {
 
   .products-grid {
     gap: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero__visual {
+    height: 390px;
+  }
+
+  .product-card {
+    width: 245px;
+  }
+
+  .product-card__image {
+    height: 260px;
+  }
+
+  .floating-card--top {
+    right: -5px;
+  }
+
+  .floating-card--bottom {
+    left: -5px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .hero__content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero__actions {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .btn {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    min-height: 48px;
+    padding: 0 12px;
+
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero__visual {
+    height: 390px;
+  }
+
+  .product-card {
+    width: 245px;
+  }
+
+  .product-card__image {
+    height: 260px;
+  }
+
+  .floating-card--top {
+    right: -5px;
+  }
+
+  .floating-card--bottom {
+    left: -5px;
   }
 }
 </style>
